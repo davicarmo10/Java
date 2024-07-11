@@ -17,6 +17,7 @@ public class SmarTvObject {
     public void aumentarVolume()
     {
         volume++;
+        
     }
 
     public void diminuirVolume ()
@@ -27,6 +28,11 @@ public class SmarTvObject {
     public void setVolume (int novoVolume)
     {
         volume = novoVolume;
+    }
+
+    public void mudarCanal (int novoCanal)
+    {
+        canal = novoCanal;
     }
 }
 
