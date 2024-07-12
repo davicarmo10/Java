@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.text.Normalizer;
-import java.util.regex.Pattern;
 
 public class Library
 {
@@ -31,7 +29,7 @@ public class Library
     {
         for (Book book : books)
         {
-            if (book.getTitle().equalsIgnoreCase(title).)
+            if (book.getTitle().equalsIgnoreCase(title))
             {
                 return book;                         
             }
