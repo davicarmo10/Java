@@ -6,7 +6,7 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            String[] options = {"Add Book", "List Books", "Remove Book", "Find Book", "Exit"};
+            String[] options = { "Add Book", "List Books", "Remove Book", "Find Book", "Exit" };
             int choice = JOptionPane.showOptionDialog(null, "Library Management System",
                     "Library", JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
@@ -26,7 +26,8 @@ public class Main {
                     for (Book book : library.getBooks()) {
                         bookList.append(book.toString()).append("\n");
                     }
-                    JOptionPane.showMessageDialog(null, bookList.length() > 0 ? bookList.toString() : "No books in the library.");
+                    JOptionPane.showMessageDialog(null,
+                            bookList.length() > 0 ? bookList.toString() : "No books in the library.");
                     break;
                 case 2:
                     String removeTitle = JOptionPane.showInputDialog("Enter title of the book to remove:");
@@ -39,7 +40,8 @@ public class Main {
                     String findTitle = JOptionPane.showInputDialog("Enter title of the book to find:");
                     if (findTitle != null) {
                         Book foundBook = library.findBook(findTitle);
-                        JOptionPane.showMessageDialog(null, foundBook != null ? "Found: " + foundBook : "Book not found.");
+                        JOptionPane.showMessageDialog(null,
+                                foundBook != null ? "Found: " + foundBook : "Book not found.");
                     }
                     break;
                 case 4:
