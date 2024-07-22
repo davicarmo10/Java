@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class VerificadorNumeroConta {
+public class BankNumberValidation {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
