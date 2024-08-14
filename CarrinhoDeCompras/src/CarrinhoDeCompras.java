@@ -23,21 +23,25 @@ public class CarrinhoDeCompras {
         }
     }
 
-    public double calcularValorTotal ()
+    public double calcularValorTotal1 ()
     {
-        List<Item> valorTotal = new ArrayList<>();
+        double valorTotal = 0d;
         if (!carrinhoDeCompras.isEmpty())
         {
-            for (Item i: carrinhoDeCompras)
+            for (Item item: carrinhoDeCompras)
             {
-                double valorItem = i.getPreco() * i;
+                double valorItem = item.getPreco() * item
                 .getQuantidade();
+                valorTotal += valorItem;
             }
             return valorTotal;
         }else{
             throw new RuntimeException("A lista esta vazia!");
         }
     }
+
+    
+
 }
 
 
