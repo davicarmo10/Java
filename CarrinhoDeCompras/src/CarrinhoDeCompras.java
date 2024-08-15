@@ -49,10 +49,6 @@ public class CarrinhoDeCompras {
                 System.out.println("lista vazia");
             }
         }
-
-        
-    
-
         @Override
         public String toString() {
           return "CarrinhoDeCompras{" +
