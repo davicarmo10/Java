@@ -5,12 +5,13 @@ import java.util.List;
 public class CarrinhoDeCompras {
     private List<Item> carrinhoDeCompras = new ArrayList<>();
 
-    public CarrinhoDeCompras(List<Item> carrinhoDeCompras) {
+    public CarrinhoDeCompras() {
         this.carrinhoDeCompras = new ArrayList<>();
     }
 
-    public void addItem(Item item) {
-        carrinhoDeCompras.add(item);
+    public void addItem(String nome, int quantidade, double preco) {    
+        Item novoItem = new Item(nome, quantidade, preco);
+        carrinhoDeCompras.add(novoItem);
     }
 
     public void removerItem(String nome) {
@@ -40,7 +41,31 @@ public class CarrinhoDeCompras {
         }
     }
 
+    public void exibirItens ()
+        {
+            if (!carrinhoDeCompras.isEmpty()){
+                System.out.println(carrinhoDeCompras);
+            }else {
+                System.out.println("lista vazia");
+            }
+        }
+
+        
     
+
+        @Override
+        public String toString() {
+          return "CarrinhoDeCompras{" +
+              "itens=" + carrinhoDeCompras +
+              '}';
+        }
+    public static void main(String[] args) {
+        CarrinhoDeCompras carrinhoDeCompras = new CarrinhoDeCompras();
+
+        carrinhoDeCompras.addItem("arroz", 2, 5.80);
+
+        carrinhoDeCompras.exibirItens();
+    }
 
 }
 
