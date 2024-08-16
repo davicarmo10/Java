@@ -1,39 +1,50 @@
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Library {
-    private ArrayList<Book> books;
+    private ArrayList<Book> bookList;
 
     public Library() {
-        books = new ArrayList<>();
+        this.bookList = new ArrayList<>();
     }
 
-    public void addBook(Book newBook) {
-        books.add(newBook);
+    public void addBook (String name, String author)
+    {
+        Book newBook = new Book(name, author);
+        bookList.add(newBook);
     }
 
-    public void deleteBook(String title) {
-
-    }
-
-    public void showBook() {
-        if (books.isEmpty()) {
-            System.out.println("no book yet");
-        } else {
-            System.out.println(books);
+    public void listBook ()
+    {
+        if (!bookList.isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, this.bookList);
+        }else{
+            JOptionPane.showMessageDialog(null,  "list is empty");
         }
     }
 
-    public Book findBook(String title) {
-        for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                return book;
+    public void findBook (String name)
+    {
+        ArrayList foundBook = new ArrayList<>();
+        if (!bookList.isEmpty())
+        {
+            for (Book book : bookList)
+            {
+                if (name.contains(name))
+                {
+                    foundBook.add(book);
+                }
             }
+            JOptionPane.showMessageDialog(null, "\n" + foundBook + "\n");
+        }else {
+            JOptionPane.showMessageDialog(null,  "list is empty\n");
         }
-        return null;
     }
 
-    public ArrayList<Book> getBooks() {
-        return books;
+    public void deleteBook (String name)
+    {
+
     }
 
 }

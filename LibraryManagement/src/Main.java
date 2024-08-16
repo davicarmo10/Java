@@ -12,43 +12,34 @@ public class Main {
 
             switch (choice) {
                 case 0:
-                    String title = JOptionPane.showInputDialog("Enter title:");
+                    String title = JOptionPane.showInputDialog("Enter title:\n");
                     if (title != null) {
-                        String author = JOptionPane.showInputDialog("Enter author:");
+                        String author = JOptionPane.showInputDialog("Enter author:\n");
                         if (author != null) {
-                            library.addBook(new Book(title, author));
-                            JOptionPane.showMessageDialog(null, "Book added.");
+                            library.addBook(title, author);
+                            JOptionPane.showMessageDialog(null, "Book added.\n");
                         }
                     }
                     break;
                 case 1:
-                    StringBuilder bookList = new StringBuilder();
-                    for (Book book : library.getBooks()) {
-                        bookList.append(book.toString()).append("\n");
-                    }
-                    JOptionPane.showMessageDialog(null,
-                            bookList.length() > 0 ? bookList.toString() : "No books in the library.");
+                    library.listBook();
                     break;
                 case 2:
-                    String removeTitle = JOptionPane.showInputDialog("Enter title of the book to remove:");
+                    String removeTitle = JOptionPane.showInputDialog("Enter title of the book to remove:\n");
                     if (removeTitle != null) {
                         library.deleteBook(removeTitle);
-                        JOptionPane.showMessageDialog(null, "Book removed if it existed.");
+                        JOptionPane.showMessageDialog(null, "Book removed if it existed.\n");
                     }
                     break;
                 case 3:
-                    String findTitle = JOptionPane.showInputDialog("Enter title of the book to find:");
-                    if (findTitle != null) {
-                        Book foundBook = library.findBook(findTitle);
-                        JOptionPane.showMessageDialog(null,
-                                foundBook != null ? "Found: " + foundBook : "Book not found.");
-                    }
+                    title = JOptionPane.showInputDialog("digite o título do livro");
+                    library.findBook(title);
                     break;
                 case 4:
                     running = false;
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Invalid option. Please try again.");
+                    JOptionPane.showMessageDialog(null, "Invalid option. Please try again.\n");
             }
         }
     }
